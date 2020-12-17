@@ -27,3 +27,82 @@ button {
 .counter.negative {
   color: red;
 }
+
+article.tweet {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: solid;
+ 
+
+}
+article.tweet:hover {
+  box-shadow: 10px 10px 4px 0px #c5cbe3;
+}
+
+article.tweet header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100px;
+  padding: 1.5em;
+  background: transparent;
+}
+
+.tweet header > span > span {
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}
+
+.tweet .username {
+  color: #ccc;
+  display: none;
+}
+
+.tweet:hover .username {
+  display: inline;
+}
+
+div.aboveBorder {
+  width: 95%;
+  margin: auto;
+  border-bottom: solid;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  background: transparent;
+  padding: 1em;
+  font-weight: 500;
+}
+
+article.tweet footer {
+  padding: 1em;
+  font-size: small;
+  position: relative;
+  height: 3em;
+}
+
+.actions, .timestamp {
+  position: absolute;
+}
+
+.timestamp {
+  left: 2em;
+}
+
+.actions {
+  right: 2em;
+}
+
+.actions .fas {
+  display: inline-block;
+  margin-left: 1em;
+  transition: color 0.25s linear;
+}
+
+.actions .fas:hover{
+  color: blue;
+
+}
