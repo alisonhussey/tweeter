@@ -32,10 +32,9 @@ article.tweet {
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  border: solid;
- 
-
+  border: solid; 
 }
+
 article.tweet:hover {
   box-shadow: 10px 10px 4px 0px #c5cbe3;
 }
@@ -45,9 +44,10 @@ article.tweet header {
   justify-content: space-between;
   flex-direction: row;
   align-items: flex-start;
-  height: 100px;
+  height: 1rem;
   padding: 1.5em;
   background: transparent;
+  margin-top: auto;
 }
 
 .tweet header > span > span {
