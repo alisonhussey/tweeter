@@ -2,10 +2,10 @@ const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
     <header>
-      <span><img src=${tweet.user.avatars}<span>${tweet.user.name}</span></span>
-      <span class="username">${tweet.user.handle}</span>
+      <span><img src=${tweet.user.avatars}<span>${escape(tweet.user.name)}</span></span>
+      <span class="username">${escape(tweet.user.handle)}</span>
     </header>
-    <div class="aboveBorder">${tweet.content.text}</div>
+    <div class="aboveBorder">${escape(tweet.content.text)}</div>
     <footer>
       <span class="timestamp">${tweet["created_at"]}</span>
       <span class="actions">
@@ -19,11 +19,17 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
   for (let tweet of tweets) {
     $tweet = createTweetElement(tweet)
-    $('#tweets-container').append($tweet);
-    //empty out tweets-container
+    $('#tweets-container').prepend($tweet);
   } 
 }
 
@@ -47,6 +53,7 @@ $form.submit(function (event) {
     $.ajax('/tweets/', {method: 'POST', data: $(this).serialize()})
   .then(function() {
     console.log("Success");
+    loadTweets()
   })
   }
 })
@@ -64,6 +71,8 @@ const loadTweets = function() {
   // .catch((err) => console.log(err));
 
 }
+
+
 
 
 $(document).ready(function() {
