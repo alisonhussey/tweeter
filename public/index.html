@@ -22,12 +22,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet"/>
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 
     <!-- App JS -->
     <script defer type="text/javascript" src="/scripts/client.js"></script>
 
-    <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </head>
 
@@ -53,7 +53,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="submitform" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea rows="1" name="text" id="tweet-text"></textarea>
           <div class="underBorder">
@@ -61,21 +61,6 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-        <!-- <article class="tweet">
-          <header>
-            <span><img src="/images/face.png"><span>Newton</span></span>
-            <span class="username">@SirIsaac</span>
-          </header>
-          <div class="aboveBorder">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          <footer>
-            <span class="timestamp">10 days ago</span>
-            <span class="actions">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </span>
-          </footer>
-        </article> -->
       </section>
       <section id="tweets-container"></section>
     </main>
