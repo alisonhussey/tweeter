@@ -52,7 +52,20 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="errorempty">
+          <div class="errorcontents">
+            <i class='fas fa-exclamation-triangle'></i>
+            <p>Tweet is Empty</p>
+            <i class='fas fa-exclamation-triangle'></i>
+          </div>
+          </div>
+          <div class="errorlong">
+            <div class="errorcontents">
+            <i class='fas fa-exclamation-triangle'></i>
+            <p>Tweet is Too Long</p>
+            <i class='fas fa-exclamation-triangle'></i>
+            </div>
+          </div>
         <form id="submitform" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea rows="1" name="text" id="tweet-text"></textarea>

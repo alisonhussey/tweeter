@@ -35,25 +35,27 @@ const renderTweets = function(tweets) {
 
 
 const submitWithAjax = function() {
-  const $form = $('form')
+  const $form = $("form")
 $form.submit(function (event) {
   console.log("form")
   event.preventDefault()
 
   const textarea = $(this).find("#tweet-text")
-
   const text = textarea.val();
   const length = textarea.val().length;
+  $(".errorempty").slideUp(1000)
+  $(".errorlong").slideUp(1000)
 
   if (text === "" || text === null) {
-    alert("Tweet Empty");
+    $(".errorempty").slideDown(1000);
   } else if (length > 140) {
-    alert("Tweet must be under 140 characters");
+    $(".errorlong").slideDown(1000);
   } else {
     $.ajax('/tweets/', {method: 'POST', data: $(this).serialize()})
   .then(function() {
     console.log("Success");
     loadTweets()
+    $('#tweet-text').val('');
   })
   }
 })
@@ -67,6 +69,7 @@ const loadTweets = function() {
   .then((result) => {
     console.log(result);
     renderTweets(result);
+
   })
   // .catch((err) => console.log(err));
 
