@@ -21,7 +21,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif; 
 }
 
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -31,3 +30,54 @@ main {
   margin: auto;
   margin-top: 4rem;
 }
+
+
+
+@media only screen and (min-width: 1024px) {
+  /* * {
+    border: 1px solid red
+  } */
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main {
+    margin-top: 12rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  } 
+
+
+  #top-header {
+    width: 40%;
+    margin-top: 12rem;
+    background-color: grey;
+
+  }
+  .tweet-header {
+    /* border: 1px solid blue; */
+    height: 27rem;
+    width: 100%;
+    float: left;
+    margin-right: 2rem;
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+
+  }
+
+  .tweet-header img {
+    height: 60px;
+    width: auto;
+    padding: 0;
+    margin: 0;
+
+  }
+  
+
+
+
+
+} 

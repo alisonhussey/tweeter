@@ -1,7 +1,7 @@
-header {
+#top-header {
   height: 400px;
   width: 100%;
-  background-color: grey;
+  background-color: #4056A1;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   display: flex;
   justify-content: center;
@@ -9,4 +9,5 @@ header {
   flex-direction: column;
   margin-top: 7.5rem;
 }
+
 

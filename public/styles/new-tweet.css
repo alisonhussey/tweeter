@@ -50,6 +50,15 @@ article.tweet header {
   margin-top: auto;
 }
 
+div.tweet-avatar {
+  display: flex;
+  align-items: center;
+}
+
+span.username {
+  margin-top: 1rem;
+}
+
 .tweet header > span > span {
   position: relative;
   bottom: 5px;
@@ -67,7 +76,7 @@ article.tweet header {
 
 div.aboveBorder {
   width: 95%;
-  margin: auto;
+  margin: 2rem;
   border-bottom: solid;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -117,5 +126,6 @@ article.tweet footer {
  .errorcontents {
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: space-around;
+
  }

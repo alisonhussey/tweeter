@@ -1,8 +1,11 @@
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
-    <header>
-      <span><img src=${tweet.user.avatars}<span>${escape(tweet.user.name)}</span></span>
+    <header class="tweet-header">
+    <div class="tweet-avatar">
+      <img src=${tweet.user.avatars}
+      <span>${escape(tweet.user.name)}</span>
+      </div>
       <span class="username">${escape(tweet.user.handle)}</span>
     </header>
     <div class="aboveBorder">${escape(tweet.content.text)}</div>
