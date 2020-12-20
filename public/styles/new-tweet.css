@@ -84,6 +84,7 @@ div.aboveBorder {
   background: transparent;
   padding: 1em;
   font-weight: 500;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {
