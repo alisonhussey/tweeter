@@ -1,12 +1,4 @@
 const createTweetElement = function(tweet) {
-
-  // const tweetDate = ${tweet.created_at};
-  // const today = Date.now();
-
-  // const diff = (today.getSeconds() - tweetDate.getSeconds());
-  // const timeSince = Math.floor(diff - 24 * 60 * 60 * 1000)
-
-
   const $tweet = `
   <article class="tweet">
     <header class="tweet-header">
@@ -26,7 +18,6 @@ const createTweetElement = function(tweet) {
       </span>
     </footer>
   </article>`;
- 
   return $tweet;
 };
 
@@ -35,18 +26,18 @@ const timeSince = function(date) {
   const secondsAgo = (dateNow - date) / 1000;
   const minutesAgo = (dateNow - date) / 1000 / 60;
   const hoursAgo = (dateNow - date) / 1000 / 60 / 60;
-  const daysAgo = (dateNow - date) / 1000 / 60 / 60 /24;
+  const daysAgo = (dateNow - date) / 1000 / 60 / 60 / 24;
 
-    if (minutesAgo < 1) {
-      return `${Math.floor(secondsAgo)} seconds ago`;
-    } else if (minutesAgo >= 1 && minutesAgo < 60) {
-      return `${Math.floor(minutesAgo)} minute(s) ago`;
-    } else if (hoursAgo >= 1 && hoursAgo < 24) {
-      return `${Math.floor(hoursAgo)} hour(s) ago`;
-    } else if (daysAgo >= 1) {
-      return `${Math.floor(daysAgo)} day(s) ago`
-    }
-}
+  if (minutesAgo < 1) {
+    return `${Math.floor(secondsAgo)} seconds ago`;
+  } else if (minutesAgo >= 1 && minutesAgo < 60) {
+    return `${Math.floor(minutesAgo)} minute(s) ago`;
+  } else if (hoursAgo >= 1 && hoursAgo < 24) {
+    return `${Math.floor(hoursAgo)} hour(s) ago`;
+  } else if (daysAgo >= 1) {
+    return `${Math.floor(daysAgo)} day(s) ago`;
+  }
+};
 
 const escape =  function(str) {
   let div = document.createElement('div');
@@ -72,7 +63,6 @@ const submitWithAjax = function() {
     const textarea = $(this).find("#tweet-text");
     const text = textarea.val();
     const length = textarea.val().length;
-    // const counter = $(this).find(".counter");
 
     $(".errorempty").slideUp(1000);
     $(".errorlong").slideUp(1000);
@@ -103,9 +93,6 @@ const loadTweets = function() {
       renderTweets(result);
     });
 };
-
-
-
 
 $(document).ready(function() {
   loadTweets();

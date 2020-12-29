@@ -65,15 +65,6 @@ span.username {
   left: 5px;
 }
 
-/* .tweet .username {
-  color: #ccc;
-  display: none;
-} */
-
-/* .tweet:hover .username {
-  display: inline;
-} */
-
 div.aboveBorder {
   width: 95%;
   margin: 2rem;
@@ -115,7 +106,6 @@ article.tweet footer {
 .actions .fas:hover{
   color: blue;
 }
-
 
 .errorempty, .errorlong {
   color: red;
