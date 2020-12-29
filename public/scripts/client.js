@@ -18,7 +18,7 @@ const createTweetElement = function(tweet) {
     </header>
     <div class="aboveBorder">${escape(tweet.content.text)}</div>
     <footer>
-      <span class="timestamp">${tweet.created_at}</span>
+      <span class="timestamp">${timeSince(tweet.created_at)}</span>
       <span class="actions">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -29,6 +29,24 @@ const createTweetElement = function(tweet) {
  
   return $tweet;
 };
+
+const timeSince = function(date) {
+  const dateNow = Date.now();
+  const secondsAgo = (dateNow - date) / 1000;
+  const minutesAgo = (dateNow - date) / 1000 / 60;
+  const hoursAgo = (dateNow - date) / 1000 / 60 / 60;
+  const daysAgo = (dateNow - date) / 1000 / 60 / 60 /24;
+
+    if (minutesAgo < 1) {
+      return `${Math.floor(secondsAgo)} seconds ago`;
+    } else if (minutesAgo >= 1 && minutesAgo < 60) {
+      return `${Math.floor(minutesAgo)} minute(s) ago`;
+    } else if (hoursAgo >= 1 && hoursAgo < 24) {
+      return `${Math.floor(hoursAgo)} hour(s) ago`;
+    } else if (daysAgo >= 1) {
+      return `${Math.floor(daysAgo)} day(s) ago`
+    }
+}
 
 const escape =  function(str) {
   let div = document.createElement('div');
